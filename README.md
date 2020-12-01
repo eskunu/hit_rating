@@ -53,14 +53,24 @@ This answer is slightly misleading, which will be explained in the Simulations s
 
 ## Preface
 
-Simulations are needed to capture the nuance of randomness, especially given the limited number of casts needed during a raid. For example, many boss fights in Molten Core, Blackwing Lair, and Ahn Qiraj only last one to two minutes, at most. This is enough time for only about forty casts of Frostbolt or Shadowbolt.
+Simulations are needed to capture the nuance of randomness, especially given the limited number of casts needed during a raid. For example, many boss fights in Molten Core, Blackwing Lair, and Ahn Qiraj only last one to two minutes, at most. This is enough time for only about thirty casts of Frostbolt or Shadowbolt.
+
+Here we will create a simulator that determines whether a spell hit or is resisted, and if it hit the damage it did hit for. It will then plot a line that takes the average damage done per hit.
 
 ## Examples
 
-If we run the simulation 1000 times we see the result is what we calculated above, or about 280 damage per second.
+### A Thousand Casts (50 minutes)
+After 1,000 simulated casts the result was what was calculated above, or about 280 damage per second. Notice the spikes on the left of the graph; as the plot moves to the right the line (or damage) gradually starts to normalize.
+
 ![Figure 1](images/image1.png "Figure 1")Figure 1
 
+### A Hundred Casts (5 minutes)
+
+Running less simulated casts effectively creates a zoomed look of the data. The following is a simulation that ran only 100 times. The most consistent result was the ".99 hit rating with 400 spellpower", while ".84 hit rating with +575 spellpower" did more damage. It is worth noting that if this simulation is run enough times, in most cases the .99 hit rating will do more damage than either of the .84 hit options (as noted in the graph above).
+
 ![Figure 2](images/image2.png "Figure 2")Figure 2
+
+### Thirty Casts (1 minute 30 seconds)
 
 ![Figure 3](images/image3.png "Figure 3")Figure 3
 
