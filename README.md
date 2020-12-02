@@ -28,6 +28,10 @@ It is worth evaulating the real cost to players for the differences explored in 
 - Players will often prioritize +hit if they are not already close to hit cap (i.e., even if they don't pay more for it, they will acquire it first).
 - For crafting, +hit gear is often at a premium compared to other similar items.
 
+#### Conclusion
+
+Although the real cost was not determined, we can surmise that players will spend about ten times more for +hit rating than for +spellpower as hit is measured in the 1's and spellpower is frequently measured in the 10's.
+
 ## Scenario
 
 There are two players: Raider A and Raider B. Raider A has .99 hit rating and 400 spellpower, while Raider B has .84 hit rating. How much spellpower is needed for Raider B to do the same amount of damage as Raider A? 
@@ -42,7 +46,10 @@ A is *(500 + (400 / 3.5 * 3)) * .99 / 3* = 278
 
 B is *(500 + (575 / 3.5 * 3)) * .84 / 3* = 278
 
+
 This answer is slightly misleading, which will be explained in the Simulations section below. In this scenario, Raider B will need 175+ additional spellpower, or a total of 575 spellpower, to match the damage of Raider A. If we take the difference of 175 spellpower and divide by the difference of hit, we get *12 = (575 - 400) / (99 - 84)*. This means about 12 spellpower will do the same damage of +1 hit.
+
+Note: This equation is not linear.
 
         Hit   Spell
     A   .99   400
@@ -51,11 +58,11 @@ This answer is slightly misleading, which will be explained in the Simulations s
 
 # Simulations
 
-## Preface
+## Introduction
 
-Simulations are needed to capture the nuance of randomness, especially given the limited number of casts needed during a raid. For example, many boss fights in Molten Core, Blackwing Lair, and Ahn Qiraj only last one to two minutes, at most. This is enough time for only about thirty casts of Frostbolt or Shadowbolt.
+Simulations are needed to capture the nuance of randomness which can't be captured using simple math, especially given the limited number of casts needed during a raid. For example, many boss fights in Molten Core, Blackwing Lair, and Ahn Qiraj only last one to two minutes, at most. This is enough time for only about thirty casts of Frostbolt or Shadowbolt.
 
-Here we will create a simulator that determines whether a spell hit or is resisted, and if it hit the damage it did hit for. It will then plot a line that takes the average damage done per hit.
+Here we will create a simulator that determines whether a spell hit or is resisted, and if it hit the damage it hit for. It will then plot a line that takes the average damage per hit.
 
 ## Examples
 
@@ -63,6 +70,8 @@ Here we will create a simulator that determines whether a spell hit or is resist
 After 1,000 simulated casts the result was what was calculated above, or about 280 damage per second. Notice the spikes on the left of the graph; as the plot moves to the right the line (or damage) gradually starts to normalize.
 
 ![Figure 1](images/image1.png "Figure 1")Figure 1
+
+These results suggest that during a 50 minute fight the difference between ".84 hit with 175 increased spellpower" and ".99 hit with only the base spellpower" will be roughly equal to each other.
 
 ### A Hundred Casts (5 minutes)
 
@@ -75,3 +84,13 @@ Running less simulated casts effectively creates a zoomed look of the data. The 
 ![Figure 3](images/image3.png "Figure 3")Figure 3
 
 ![Figure 4](images/image4.png "Figure 4")Figure 4
+
+![Figure 5](images/image5.png "Figure 5")Figure 5
+
+![Figure 6](images/image6.png "Figure 6")Figure 6
+
+![Figure 7](images/image7.png "Figure 7")Figure 7
+
+![Figure 8](images/image8.png "Figure 8")Figure 8
+
+![Figure 9](images/image9.png "Figure 9")Figure 9
